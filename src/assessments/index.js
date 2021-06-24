@@ -30,21 +30,24 @@ import TitleKeywordAssessment from "./seo/TitleKeywordAssessment";
 import UrlKeywordAssessment from "./seo/UrlKeywordAssessment";
 import UrlLengthAssessment from "./seo/UrlLengthAssessment";
 import UrlStopWordsAssessment from "./seo/urlStopWordsAssessment";
+import TitleLengthAssessment from "./seo/TitleLengthAssessment"
+import SapoLengthAssessment from "./seo/SapoLengthAssessment"
 
 const readability = {
-	FleschReadingEaseAssessment,
-	ParagraphTooLongAssessment,
-	PassiveVoiceAssessment,
-	SentenceBeginningsAssessment,
-	SentenceLengthInDescriptionAssessment,
-	SentenceLengthInTextAssessment,
-	SubheadingDistributionTooLongAssessment,
-	TextPresenceAssessment,
-	TransitionWordsAssessment,
-	WordComplexityAssessment,
-};
+  FleschReadingEaseAssessment,
+  ParagraphTooLongAssessment,
+  PassiveVoiceAssessment,
+  SentenceBeginningsAssessment,
+  SentenceLengthInDescriptionAssessment,
+  SentenceLengthInTextAssessment,
+  SubheadingDistributionTooLongAssessment,
+  TextPresenceAssessment,
+  TransitionWordsAssessment,
+  WordComplexityAssessment,
+}
 
 const seo = {
+  SapoLengthAssessment,
 	FunctionWordsInKeyphraseAssessment,
 	InternalLinksAssessment,
 	IntroductionKeywordAssessment,
@@ -66,6 +69,7 @@ const seo = {
 	UrlKeywordAssessment,
 	UrlLengthAssessment,
 	UrlStopWordsAssessment,
+  TitleLengthAssessment
 };
 
 export {

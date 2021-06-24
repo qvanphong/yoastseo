@@ -15,6 +15,7 @@ var defaultAttributes = {
 	url: "",
 	locale: "en_US",
 	permalink: "",
+  sapo: "",
 };
 
 /**
@@ -31,6 +32,7 @@ var defaultAttributes = {
  * @param {string} [attributes.permalink]   The base url + slug.
  * @param {string} [attributes.locale]      The locale.
  * @param {Object} [attributes.wpBlocks]    The text, encoded in WordPress block editor blocks.
+ * @param {Object} [attributes.sapo]        The text, like short opening for articles.
  *
  * @constructor
  */
@@ -163,6 +165,14 @@ Paper.prototype.hasUrl = function() {
  */
 Paper.prototype.getUrl = function() {
 	return this._attributes.url;
+};
+
+/**
+ * Return the sapo text, or an empty string of no text is available.
+ * @returns {string} Returns the sapo text
+ */
+Paper.prototype.getSapo = function() {
+	return this._attributes.sapo;
 };
 
 /**
