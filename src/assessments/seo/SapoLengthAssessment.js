@@ -96,6 +96,10 @@ class SapoLengthAssessment extends Assessment {
       }
     }
   }
+
+  isApplicable( paper ) {
+    return paper.hasSapo();
+  }
 }
 
 export default SapoLengthAssessment

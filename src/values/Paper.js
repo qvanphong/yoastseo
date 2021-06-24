@@ -176,6 +176,14 @@ Paper.prototype.getSapo = function() {
 };
 
 /**
+ * Check whether a sapo is available
+ * @returns {boolean} Returns true if the Paper has an Sapo.
+ */
+Paper.prototype.hasSapo = function() {
+	return this._attributes.sapo !== "";
+};
+
+/**
  * Check whether a locale is available
  * @returns {boolean} Returns true if the paper has a locale
  */
