@@ -90,6 +90,6 @@ export default class SapoKeywordAssessment extends Assessment {
    * @returns {boolean} True when there is sapo.
    */
   isApplicable(paper) {
-    return paper.hasSapo() && isEmpty(paper.getSapo())
+    return paper.hasSapo() && !isEmpty(paper.getSapo())
   }
 }
