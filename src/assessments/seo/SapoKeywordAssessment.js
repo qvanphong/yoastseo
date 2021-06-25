@@ -1,9 +1,6 @@
-import { merge } from 'lodash-es'
+import { merge, isEmpty } from 'lodash-es';
 
 import Assessment from '../../assessment'
-import { createAnchorOpeningTag } from '../../helpers/shortlinker'
-import { inRangeStartEndInclusive } from '../../helpers/inRange.js'
-import { getSubheadingsTopLevel } from '../../stringProcessing/getSubheadings'
 import AssessmentResult from '../../values/AssessmentResult'
 
 /**
@@ -21,9 +18,12 @@ export default class SapoKeywordAssessment extends Assessment {
     super()
 
     const defaultConfig = {
+      minMatched: 1,
+      maxMatched: 2,
       scores: {
-        noMatches: 3,
-        matched: 9,
+        inBoundary: 9,
+        notItBoundary: 3,
+        noMatches: -10,
       },
     }
 
@@ -53,12 +53,31 @@ export default class SapoKeywordAssessment extends Assessment {
   }
 
   calculateResult() {
-    if (this._sapo > 0) {
-      return { score: this._config.scores.matched, resultText: 'Từ khóa trong Sapo: Từ khóa có xuất hiện trong Sapo' }
-    } else {
+    if (this._sapo >= this._config.minMatched && this._sapo <= this._config.maxMatched) {
+      return {
+        score: this._config.scores.inBoundary,
+        resultText: 'Từ khóa trong Sapo: Tốt!',
+      }
+    }
+
+    if (this._sapo == 0) {
       return {
         score: this._config.scores.noMatches,
-        resultText: 'Từ khóa trong Sapo: Từ khóa không xuất hiện trong Sapo, hãy thêm vào!',
+        resultText: 'Từ khóa trong Sapo: Hãy thêm từ khóa chính vào Sapo.',
+      }
+    }
+
+    if (this._sapo > this.maxMatched) {
+      return {
+        score: this._config.scores.notItBoundary,
+        resultText: `Từ khóa trong Sapo: Từ khóa xuất hiện quá nhiều trong Sapo! Hãy giảm số lần từ khóa xuất hiện trong khoảng ${this._config.minMatched} - ${this._config.maxMatched} lần.`,
+      }
+    }
+
+    if (this._sapo < this.maxMatched) {
+      return {
+        score: this._config.scores.notItBoundary,
+        resultText: `Từ khóa trong Sapo: Từ khóa xuất hiện quá ít trong Sapo! Hãy tăng số lần từ khóa xuất hiện trong khoảng ${this._config.minMatched} - ${this._config.maxMatched} lần.`,
       }
     }
   }
@@ -68,9 +87,9 @@ export default class SapoKeywordAssessment extends Assessment {
    *
    * @param {Paper} paper The paper to use for the assessment.
    *
-   * @returns {boolean} True when there is text and a keyword.
+   * @returns {boolean} True when there is sapo.
    */
   isApplicable(paper) {
-    return paper.hasSapo() && paper.getSapo != ''
+    return paper.hasSapo() && isEmpty(paper.getSapo())
   }
 }
