@@ -47,7 +47,8 @@ import h1s from "./researches/h1s";
 import getProminentWordsForInsights from "./researches/getProminentWordsForInsights";
 import getProminentWordsForInternalLinking from "./researches/getProminentWordsForInternalLinking";
 import getWordForms from "./researches/getWordForms";
-
+import sapoKeyword from "./researches/sapoKeyword";
+import wordCountInTitle from "./researches/wordCountInTitle";
 /**
  * This contains all possible, default researches.
  * @param {Paper} paper The Paper object that is needed within the researches.
@@ -58,46 +59,48 @@ var Researcher = function( paper ) {
 	this.setPaper( paper );
 
 	this.defaultResearches = {
-		urlLength: urlLength,
-		wordCountInText: wordCountInText,
-		findKeywordInPageTitle: findKeywordInPageTitle,
-		calculateFleschReading: calculateFleschReading,
-		getLinkStatistics: getLinkStatistics,
-		getLinks: getLinks,
-		linkCount: linkCount,
-		imageCount: imageCount,
-		altTagCount: altTagCount,
-		matchKeywordInSubheadings: matchKeywordInSubheadings,
-		keywordCount: keywordCount,
-		getKeywordDensity: getKeywordDensity,
-		stopWordsInKeyword: stopWordsInKeyword,
-		stopWordsInUrl: stopWordsInUrl,
-		metaDescriptionLength: metaDescriptionLength,
-		keyphraseLength: keyphraseLength,
-		keywordCountInUrl: keywordCountInUrl,
-		firstParagraph: findKeywordInFirstParagraph,
-		metaDescriptionKeyword: metaDescriptionKeyword,
-		pageTitleWidth: pageTitleWidth,
-		wordComplexity: wordComplexity,
-		getParagraphLength: getParagraphLength,
-		countSentencesFromText: countSentencesFromText,
-		countSentencesFromDescription: countSentencesFromDescription,
-		getSubheadingTextLengths: getSubheadingTextLengths,
-		findTransitionWords: findTransitionWords,
-		passiveVoice: passiveVoice,
-		getSentenceBeginnings: getSentenceBeginnings,
-		relevantWords: relevantWords,
-		readingTime: readingTime,
-		getTopicDensity: getTopicDensity,
-		topicCount: topicCount,
-		sentences,
-		keyphraseDistribution: keyphraseDistribution,
-		morphology: getWordForms,
-		functionWordsInKeyphrase: functionWordsInKeyphrase,
-		h1s: h1s,
-		prominentWordsForInsights: getProminentWordsForInsights,
-		prominentWordsForInternalLinking: getProminentWordsForInternalLinking,
-	};
+    urlLength: urlLength,
+    wordCountInText: wordCountInText,
+    findKeywordInPageTitle: findKeywordInPageTitle,
+    calculateFleschReading: calculateFleschReading,
+    getLinkStatistics: getLinkStatistics,
+    getLinks: getLinks,
+    linkCount: linkCount,
+    imageCount: imageCount,
+    altTagCount: altTagCount,
+    matchKeywordInSubheadings: matchKeywordInSubheadings,
+    matchKeywordInSapo: sapoKeyword,
+    keywordCount: keywordCount,
+    wordCountInTitle: wordCountInTitle,
+    getKeywordDensity: getKeywordDensity,
+    stopWordsInKeyword: stopWordsInKeyword,
+    stopWordsInUrl: stopWordsInUrl,
+    metaDescriptionLength: metaDescriptionLength,
+    keyphraseLength: keyphraseLength,
+    keywordCountInUrl: keywordCountInUrl,
+    firstParagraph: findKeywordInFirstParagraph,
+    metaDescriptionKeyword: metaDescriptionKeyword,
+    pageTitleWidth: pageTitleWidth,
+    wordComplexity: wordComplexity,
+    getParagraphLength: getParagraphLength,
+    countSentencesFromText: countSentencesFromText,
+    countSentencesFromDescription: countSentencesFromDescription,
+    getSubheadingTextLengths: getSubheadingTextLengths,
+    findTransitionWords: findTransitionWords,
+    passiveVoice: passiveVoice,
+    getSentenceBeginnings: getSentenceBeginnings,
+    relevantWords: relevantWords,
+    readingTime: readingTime,
+    getTopicDensity: getTopicDensity,
+    topicCount: topicCount,
+    sentences,
+    keyphraseDistribution: keyphraseDistribution,
+    morphology: getWordForms,
+    functionWordsInKeyphrase: functionWordsInKeyphrase,
+    h1s: h1s,
+    prominentWordsForInsights: getProminentWordsForInsights,
+    prominentWordsForInternalLinking: getProminentWordsForInternalLinking,
+  }
 
 	this._data = {};
 

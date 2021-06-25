@@ -1,22 +1,25 @@
-import { inherits } from "util";
+import { inherits } from 'util'
 
-import IntroductionKeywordAssessment from "./assessments/seo/IntroductionKeywordAssessment";
-import KeyphraseLengthAssessment from "./assessments/seo/KeyphraseLengthAssessment";
-import KeywordDensityAssessment from "./assessments/seo/KeywordDensityAssessment";
-import MetaDescriptionKeywordAssessment from "./assessments/seo/MetaDescriptionKeywordAssessment";
-import TextCompetingLinksAssessment from "./assessments/seo/TextCompetingLinksAssessment";
-import InternalLinksAssessment from "./assessments/seo/InternalLinksAssessment";
-import TitleKeywordAssessment from "./assessments/seo/TitleKeywordAssessment";
-import UrlKeywordAssessment from "./assessments/seo/UrlKeywordAssessment";
-import Assessor from "./assessor";
-import MetaDescriptionLength from "./assessments/seo/MetaDescriptionLengthAssessment";
-import SubheadingsKeyword from "./assessments/seo/SubHeadingsKeywordAssessment";
-import TextImages from "./assessments/seo/TextImagesAssessment";
-import TextLength from "./assessments/seo/TextLengthAssessment";
-import OutboundLinks from "./assessments/seo/OutboundLinksAssessment";
-import TitleWidth from "./assessments/seo/PageTitleWidthAssessment";
-import FunctionWordsInKeyphrase from "./assessments/seo/FunctionWordsInKeyphraseAssessment";
-import SingleH1Assessment from "./assessments/seo/SingleH1Assessment";
+import IntroductionKeywordAssessment from './assessments/seo/IntroductionKeywordAssessment'
+import KeyphraseLengthAssessment from './assessments/seo/KeyphraseLengthAssessment'
+import KeywordDensityAssessment from './assessments/seo/KeywordDensityAssessment'
+import MetaDescriptionKeywordAssessment from './assessments/seo/MetaDescriptionKeywordAssessment'
+import TextCompetingLinksAssessment from './assessments/seo/TextCompetingLinksAssessment'
+import InternalLinksAssessment from './assessments/seo/InternalLinksAssessment'
+import TitleKeywordAssessment from './assessments/seo/TitleKeywordAssessment'
+import UrlKeywordAssessment from './assessments/seo/UrlKeywordAssessment'
+import Assessor from './assessor'
+import MetaDescriptionLength from './assessments/seo/MetaDescriptionLengthAssessment'
+import SubheadingsKeyword from './assessments/seo/SubHeadingsKeywordAssessment'
+import TextImages from './assessments/seo/TextImagesAssessment'
+import TextLength from './assessments/seo/TextLengthAssessment'
+import OutboundLinks from './assessments/seo/OutboundLinksAssessment'
+import TitleWidth from './assessments/seo/PageTitleWidthAssessment'
+import FunctionWordsInKeyphrase from './assessments/seo/FunctionWordsInKeyphraseAssessment'
+import SingleH1Assessment from './assessments/seo/SingleH1Assessment'
+import TitleLengthAssessment from './assessments/seo/TitleLengthAssessment'
+import SapoLengthAssessment from './assessments/seo/SapoLengthAssessment'
+import SapoKeywordAssessment from './assessments/seo/SapoKeywordAssessment'
 /**
  * Creates the Assessor
  *
@@ -26,30 +29,33 @@ import SingleH1Assessment from "./assessments/seo/SingleH1Assessment";
  *
  * @constructor
  */
-const SEOAssessor = function( i18n, options ) {
-	Assessor.call( this, i18n, options );
-	this.type = "SEOAssessor";
+const SEOAssessor = function(i18n, options) {
+  Assessor.call(this, i18n, options)
+  this.type = 'SEOAssessor'
 
-	this._assessments = [
-		new IntroductionKeywordAssessment(),
-		new KeyphraseLengthAssessment(),
-		new KeywordDensityAssessment(),
-		new MetaDescriptionKeywordAssessment(),
-		new MetaDescriptionLength(),
-		new SubheadingsKeyword(),
-		new TextCompetingLinksAssessment(),
-		new TextImages(),
-		new TextLength(),
-		new OutboundLinks(),
-		new TitleKeywordAssessment(),
-		new InternalLinksAssessment(),
-		new TitleWidth(),
-		new UrlKeywordAssessment(),
-		new FunctionWordsInKeyphrase(),
-		new SingleH1Assessment(),
-	];
-};
+  this._assessments = [
+    new IntroductionKeywordAssessment(),
+    new KeyphraseLengthAssessment(),
+    new KeywordDensityAssessment(),
+    new MetaDescriptionKeywordAssessment(),
+    new MetaDescriptionLength(),
+    new SubheadingsKeyword(),
+    new TextCompetingLinksAssessment(),
+    new TextImages(),
+    new TextLength(),
+    new OutboundLinks(),
+    new TitleKeywordAssessment(),
+    new InternalLinksAssessment(),
+    new TitleWidth(),
+    new UrlKeywordAssessment(),
+    new FunctionWordsInKeyphrase(),
+    new SingleH1Assessment(),
+    new TitleLengthAssessment(),
+    new SapoLengthAssessment(),
+    new SapoKeywordAssessment(),
+  ]
+}
 
-inherits( SEOAssessor, Assessor );
+inherits(SEOAssessor, Assessor)
 
-export default SEOAssessor;
+export default SEOAssessor

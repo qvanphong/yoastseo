@@ -32,7 +32,6 @@ class TitleLengthAssessment extends Assessment {
   }
 
   getResult (paper, researcher, i18n) {
-    researcher.addResearch('wordCountInTitle', wordCountInTitle)
     const wordCount = researcher.getResearch('wordCountInTitle')
     const assessmentResult = new AssessmentResult();
     const calculatedResult = this.calculatedResult(wordCount, i18n);

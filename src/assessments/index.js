@@ -32,6 +32,7 @@ import UrlLengthAssessment from "./seo/UrlLengthAssessment";
 import UrlStopWordsAssessment from "./seo/urlStopWordsAssessment";
 import TitleLengthAssessment from "./seo/TitleLengthAssessment"
 import SapoLengthAssessment from "./seo/SapoLengthAssessment"
+import SapoKeywordAssessment from './seo/SapoKeywordAssessment';
 
 const readability = {
   FleschReadingEaseAssessment,
@@ -47,8 +48,7 @@ const readability = {
 }
 
 const seo = {
-  SapoLengthAssessment,
-	FunctionWordsInKeyphraseAssessment,
+  FunctionWordsInKeyphraseAssessment,
 	InternalLinksAssessment,
 	IntroductionKeywordAssessment,
 	KeyphraseLengthAssessment,
@@ -69,7 +69,9 @@ const seo = {
 	UrlKeywordAssessment,
 	UrlLengthAssessment,
 	UrlStopWordsAssessment,
-  TitleLengthAssessment
+  SapoLengthAssessment,
+  TitleLengthAssessment,
+  SapoKeywordAssessment,
 };
 
 export {

@@ -31,7 +31,6 @@ class SapoLengthAssessment extends Assessment {
    * @returns
    */
   getResult(paper, researcher, i18n) {
-    console.log(paper.getSapo());
     const sapoWordCount = countSapoHeading(paper.getSapo())
     const assessmentResult = new AssessmentResult()
     const calculatedResult = this.calculatedResult(sapoWordCount)
