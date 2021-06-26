@@ -16,6 +16,7 @@ var defaultAttributes = {
 	locale: "en_US",
 	permalink: "",
   sapo: "",
+  subKeywords: [],
 };
 
 /**
@@ -24,6 +25,7 @@ var defaultAttributes = {
  * @param {string} text                     The text to use in the analysis.
  * @param {object} [attributes]             The object containing all attributes.
  * @param {string} [attributes.keyword]     The main keyword.
+ * @param {string} [attributes.subKeywords]  The sub keyword, an array.
  * @param {string} [attributes.synonyms]    The main keyword's synonyms.
  * @param {string} [attributes.title]       The SEO title.
  * @param {string} [attributes.description] The SEO description.
@@ -181,6 +183,22 @@ Paper.prototype.getSapo = function() {
  */
 Paper.prototype.hasSapo = function() {
 	return this._attributes.sapo !== "";
+};
+
+/**
+ * Return the sub keywords array.
+ * @returns {string} Returns the sub keywords array
+ */
+Paper.prototype.getSubKeywords = function() {
+	return this._attributes.subKeywords;
+};
+
+/**
+ * Check whether sub keywords are available
+ * @returns {boolean} Returns true if the Paper has sub keywords.
+ */
+Paper.prototype.hasSubKeywords = function() {
+	return this._attributes.subKeywords !== null && !isEmpty( this._attributes.subKeywords.length);
 };
 
 /**
