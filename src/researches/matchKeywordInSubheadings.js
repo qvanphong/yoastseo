@@ -1,7 +1,7 @@
 import { includes } from "lodash-es";
 import getFunctionWordsLanguages from "../helpers/getFunctionWordsLanguages";
 import getLanguage from "../helpers/getLanguage";
-import { getSubheadingContentsTopLevel } from "../stringProcessing/getSubheadings";
+import { getSubheadingContentsTopLevel3 } from "../stringProcessing/getSubheadings";
 import stripSomeTags from "../stringProcessing/stripNonTextTags";
 import { findTopicFormsInString } from "./findKeywordFormsInString";
 
@@ -47,7 +47,7 @@ export default function( paper, researcher ) {
 	const locale = paper.getLocale();
 	const result = { count: 0, matches: 0, percentReflectingTopic: 0 };
 	const useSynonyms = true;
-	const subheadings = getSubheadingContentsTopLevel( text );
+	const subheadings = getSubheadingContentsTopLevel3( text );
 
 	if ( subheadings.length !== 0 ) {
 		result.count = subheadings.length;

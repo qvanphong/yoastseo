@@ -3,7 +3,7 @@ import { merge } from "lodash-es";
 import Assessment from "../../assessment";
 import { createAnchorOpeningTag } from "../../helpers/shortlinker";
 import { inRangeStartEndInclusive } from "../../helpers/inRange.js";
-import { getSubheadingsTopLevel } from "../../stringProcessing/getSubheadings";
+import { getSubheadingsTopLevel3 } from "../../stringProcessing/getSubheadings";
 import AssessmentResult from "../../values/AssessmentResult";
 
 /**
@@ -50,6 +50,7 @@ export default class SubHeadingsKeywordAssessment extends Assessment {
 	 */
 	getResult( paper, researcher, i18n ) {
 		this._subHeadings = researcher.getResearch( "matchKeywordInSubheadings" );
+    console.log("🚀 ~ file: SubHeadingsKeywordAssessment.js ~ line 53 ~ SubHeadingsKeywordAssessment ~ getResult ~ this._subHeadings", this._subHeadings)
 
 		const assessmentResult = new AssessmentResult();
 
@@ -71,7 +72,7 @@ export default class SubHeadingsKeywordAssessment extends Assessment {
 	 * @returns {boolean} True when there is at least one subheading.
 	 */
 	hasSubheadings( paper ) {
-		const subheadings =  getSubheadingsTopLevel( paper.getText() );
+		const subheadings =  getSubheadingsTopLevel3( paper.getText() );
 		return subheadings.length > 0;
 	}
 
