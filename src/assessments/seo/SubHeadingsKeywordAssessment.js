@@ -50,7 +50,6 @@ export default class SubHeadingsKeywordAssessment extends Assessment {
 	 */
 	getResult( paper, researcher, i18n ) {
 		this._subHeadings = researcher.getResearch( "matchKeywordInSubheadings" );
-    console.log("🚀 ~ file: SubHeadingsKeywordAssessment.js ~ line 53 ~ SubHeadingsKeywordAssessment ~ getResult ~ this._subHeadings", this._subHeadings)
 
 		const assessmentResult = new AssessmentResult();
 
