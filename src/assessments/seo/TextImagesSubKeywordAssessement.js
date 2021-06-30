@@ -1,4 +1,4 @@
-import { merge } from 'lodash-es'
+import { merge, isEmpty } from 'lodash-es';
 
 import Assessment from '../../assessment'
 import { inRangeStartEndInclusive } from '../../helpers/inRange.js'
@@ -18,8 +18,8 @@ export default class TextImagesSubKeywordAssessment extends Assessment {
 
     const defaultConfig = {
       parameters: {
-        lowerBoundary: 0.3,
-        upperBoundary: 0.75,
+        lowerBoundary: 0.1,
+        upperBoundary: 0.5,
       },
       scores: {
         noImages: 3,
@@ -29,6 +29,8 @@ export default class TextImagesSubKeywordAssessment extends Assessment {
         withAltNonKeyword: 6,
         withAlt: 6,
         noAlt: 6,
+        notAllKeywordMatched: 6,
+        notAllKeywordInBound: 6,
       },
       urlTitle: createAnchorOpeningTag('https://yoa.st/33c'),
       urlCallToAction: createAnchorOpeningTag('https://yoa.st/33d'),
@@ -120,6 +122,18 @@ export default class TextImagesSubKeywordAssessment extends Assessment {
   }
 
   /**
+   * Check if some keywords is not appear in alt tag.
+   *   */
+  someKeywordNotFound() {
+    return this.altProperties.matches.includes(0);
+  }
+
+  someKeywordNotInbound(){
+    let outOfBound = this.altProperties.matches.filter(match => match < this._minNumberOfKeywordMatches || match > this._maxNumberOfKeywordMatches)
+    return !isEmpty(outOfBound)
+  }
+
+  /**
    * Calculate the result based on the current image count and current image alt-tag count.
    *
    * @param {Object} i18n The object used for translations.
@@ -178,6 +192,22 @@ export default class TextImagesSubKeywordAssessment extends Assessment {
           this._config.urlCallToAction,
           '</a>'
         ),
+      }
+    }
+
+    // Has altags, has keyword but not every keywords appear
+    if(this.someKeywordNotFound()) {
+      return {
+        score: this._config.scores.notAllKeywordMatched,
+        resultText: 'Keyword phụ trong thuộc tính alt: Một số keyword phụ không xuất hiện trong bài viết.',
+      }
+    }
+
+    if (this.someKeywordNotInbound()) {
+      return {
+        score: this._config.scores.notAllKeywordInBound,
+        resultText: 'Keyword phụ trong thuộc tính alt: Một số keyword phụ có tần suất xuất hiện không nằm trong phạm vi ('
+         + this._minNumberOfKeywordMatches + ' - ' + this._maxNumberOfKeywordMatches + ' lần xuất hiện trong chú thích ảnh.)',
       }
     }
 

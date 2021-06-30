@@ -20,6 +20,7 @@ const matchAltProperties = function(imageMatches, subKeywords) {
     withAlt: 0,
     withAltKeyword: 0,
     withAltNonKeyword: 0,
+    matches: []
   }
 
   for (let i = 0; i < imageMatches.length; i++) {
@@ -38,7 +39,7 @@ const matchAltProperties = function(imageMatches, subKeywords) {
     }
 
     // If the keyword is matched in the alt tag
-    if (findInTag(subKeywords, alttag)) {
+    if (findInTag(subKeywords, alttag, altProperties.matches)) {
       altProperties.withAltKeyword++
       continue
     }
@@ -49,8 +50,17 @@ const matchAltProperties = function(imageMatches, subKeywords) {
   return altProperties
 }
 
-function findInTag(keywords, alttag) {
-  return alttag.toLowerCase().includes(keywords[0].toLowerCase()) || alttag.toLowerCase().includes(keywords[1].toLowerCase())
+function findInTag(keywords, alttag, matches) {
+  let found = false
+  for (let index = 0; index < keywords.length; index++) {
+    if(alttag.toLowerCase().includes(keywords[index].toLowerCase())){
+      matches[index] = matches[index] == null ? 1 : matches[index] + 1
+      found = true
+    }
+    else
+      matches[index] = matches[index] == null ? 0 : matches[index]
+  }
+  return found
 }
 
 /**
