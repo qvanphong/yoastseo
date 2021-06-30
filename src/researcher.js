@@ -50,6 +50,7 @@ import getWordForms from "./researches/getWordForms";
 import sapoKeyword from "./researches/sapoKeyword";
 import wordCountInTitle from "./researches/wordCountInTitle";
 import subKeywordImageAltTags from "./researches/subKeywordImageAltTags";
+import matchSubKeywordInSubheadings from "./researches/matchSubKeywordInSubheadings";
 /**
  * This contains all possible, default researches.
  * @param {Paper} paper The Paper object that is needed within the researches.
@@ -102,6 +103,7 @@ var Researcher = function( paper ) {
     prominentWordsForInsights: getProminentWordsForInsights,
     prominentWordsForInternalLinking: getProminentWordsForInternalLinking,
     subKeywordImage: subKeywordImageAltTags,
+    subkeywordsInHeadings: matchSubKeywordInSubheadings,
   }
 
 	this._data = {};

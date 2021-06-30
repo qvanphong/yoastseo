@@ -21,6 +21,7 @@ import TitleLengthAssessment from './assessments/seo/TitleLengthAssessment'
 import SapoLengthAssessment from './assessments/seo/SapoLengthAssessment'
 import SapoKeywordAssessment from './assessments/seo/SapoKeywordAssessment'
 import TextImagesSubKeywordAssessment from './assessments/seo/TextImagesSubKeywordAssessement';
+import SubHeadingsKeywordAssessment from './assessments/seo/SubHeadingsSubKeywordAssessment'
 /**
  * Creates the Assessor
  *
@@ -55,6 +56,7 @@ const SEOAssessor = function(i18n, options) {
     new SapoLengthAssessment(),
     new SapoKeywordAssessment(),
     new TextImagesSubKeywordAssessment(),
+    new SubHeadingsKeywordAssessment(),
   ]
 }
 
