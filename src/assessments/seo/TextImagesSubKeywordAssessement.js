@@ -73,7 +73,7 @@ export default class TextImagesSubKeywordAssessment extends Assessment {
    * @returns {boolean} True when there is text.
    */
   isApplicable(paper) {
-    return paper.hasText()
+    return paper.hasSubKeywords()
   }
 
   /**

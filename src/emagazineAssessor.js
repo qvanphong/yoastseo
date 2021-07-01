@@ -3,7 +3,7 @@ import { inherits } from 'util'
 import SapoLengthAssessment from './assessments/seo/SapoLengthAssessment'
 import SapoKeywordAssessment from './assessments/seo/SapoKeywordAssessment'
 import TextImagesSubKeywordAssessment from './assessments/seo/TextImagesSubKeywordAssessement'
-import SubHeadingsKeywordAssessment from './assessments/seo/SubHeadingsSubKeywordAssessment'
+import SubHeadingsSubKeywordAssessment from './assessments/seo/SubHeadingsSubKeywordAssessment';
 import Assessor from './assessor'
 
 /**
@@ -23,7 +23,7 @@ const EMagazineSEO = function(i18n, options) {
     new SapoLengthAssessment(),
     new SapoKeywordAssessment(),
     new TextImagesSubKeywordAssessment(),
-    new SubHeadingsKeywordAssessment(),
+    new SubHeadingsSubKeywordAssessment(),
   ]
 }
 
