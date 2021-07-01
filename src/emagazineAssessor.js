@@ -13,7 +13,7 @@ import SubHeadingsKeywordAssessment from './assessments/seo/SubHeadingsSubKeywor
  *
  * @constructor
  */
-const SEOAssessor = function(i18n, options) {
+const EMagazineSEO = function(i18n, options) {
   Assessor.call(this, i18n, options)
   this.type = 'EmagazineSEO'
 
@@ -25,6 +25,6 @@ const SEOAssessor = function(i18n, options) {
   ]
 }
 
-inherits(SEOAssessor, Assessor)
+inherits(EMagazineSEO, Assessor)
 
-export default SEOAssessor
+export default EMagazineSEO

@@ -11,6 +11,7 @@ import App from "./src/app";
 import Assessor from "./src/assessor";
 import ContentAssessor from "./src/contentAssessor";
 import SeoAssessor from './src/seoAssessor';
+import EMagazineSEO from "./src/emagazineAssessor";
 import TaxonomyAssessor from "./src/taxonomyAssessor";
 import Pluggable from "./src/pluggable";
 import Researcher from "./src/researcher";
@@ -27,6 +28,7 @@ export {
 	Assessor,
 	ContentAssessor,
 	SeoAssessor,
+  EMagazineSEO,
 	TaxonomyAssessor,
 	Pluggable,
 	Researcher,
