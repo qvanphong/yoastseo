@@ -15,7 +15,7 @@ import SubHeadingsKeywordAssessment from './assessments/seo/SubHeadingsSubKeywor
  */
 const SEOAssessor = function(i18n, options) {
   Assessor.call(this, i18n, options)
-  this.type = 'SEOAssessor'
+  this.type = 'EmagazineSEO'
 
   this._assessments = [
     new SapoLengthAssessment(),
