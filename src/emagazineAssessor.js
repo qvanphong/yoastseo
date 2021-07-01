@@ -2,8 +2,10 @@ import { inherits } from 'util'
 
 import SapoLengthAssessment from './assessments/seo/SapoLengthAssessment'
 import SapoKeywordAssessment from './assessments/seo/SapoKeywordAssessment'
-import TextImagesSubKeywordAssessment from './assessments/seo/TextImagesSubKeywordAssessement';
+import TextImagesSubKeywordAssessment from './assessments/seo/TextImagesSubKeywordAssessement'
 import SubHeadingsKeywordAssessment from './assessments/seo/SubHeadingsSubKeywordAssessment'
+import Assessor from './assessor'
+
 /**
  * Creates the Assessor
  *
