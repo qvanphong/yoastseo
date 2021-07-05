@@ -156,4 +156,3 @@ export default class SubHeadingsSubKeywordAssessment extends Assessment {
     }
   }
 }
-export default SubHeadingsSubKeywordAssessment
