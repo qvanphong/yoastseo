@@ -34,6 +34,7 @@ import TitleLengthAssessment from "./seo/TitleLengthAssessment"
 import SapoLengthAssessment from "./seo/SapoLengthAssessment"
 import SapoKeywordAssessment from './seo/SapoKeywordAssessment';
 import TextImagesSubKeywordAssessment from './seo/TextImagesSubKeywordAssessement';
+import TextLengthCounter from "./seo/TextLengthCounter";
 
 const readability = {
   FleschReadingEaseAssessment,
@@ -46,6 +47,7 @@ const readability = {
   TextPresenceAssessment,
   TransitionWordsAssessment,
   WordComplexityAssessment,
+  TextLengthCounter,
 }
 
 const seo = {

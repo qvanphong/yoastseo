@@ -12,6 +12,7 @@ import Assessor from "./src/assessor";
 import ContentAssessor from "./src/contentAssessor";
 import SeoAssessor from './src/seoAssessor';
 import EMagazineSEO from "./src/emagazineAssessor";
+import WordCounterSEO from "./src/wordCounter";
 import TaxonomyAssessor from "./src/taxonomyAssessor";
 import Pluggable from "./src/pluggable";
 import Researcher from "./src/researcher";
@@ -29,6 +30,7 @@ export {
 	ContentAssessor,
 	SeoAssessor,
   EMagazineSEO,
+  WordCounterSEO,
 	TaxonomyAssessor,
 	Pluggable,
 	Researcher,
@@ -56,26 +58,27 @@ export {
  * For new exports, please add it as a named dependency above instead.
  */
 export default {
-	App,
-	Assessor,
-	ContentAssessor,
-	TaxonomyAssessor,
-	Pluggable,
-	Researcher,
-	SnippetPreview,
+  App,
+  Assessor,
+  ContentAssessor,
+  WordCounterSEO,
+  TaxonomyAssessor,
+  Pluggable,
+  Researcher,
+  SnippetPreview,
 
-	Paper,
-	AssessmentResult,
+  Paper,
+  AssessmentResult,
 
-	AnalysisWebWorker,
-	AnalysisWorkerWrapper,
-	createWorker,
+  AnalysisWebWorker,
+  AnalysisWorkerWrapper,
+  createWorker,
 
-	assessments,
-	bundledPlugins,
-	config,
-	helpers,
-	markers,
-	string,
-	interpreters,
-};
+  assessments,
+  bundledPlugins,
+  config,
+  helpers,
+  markers,
+  string,
+  interpreters,
+}
