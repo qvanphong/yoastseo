@@ -198,7 +198,7 @@ Paper.prototype.getSubKeywords = function() {
  * @returns {boolean} Returns true if the Paper has sub keywords.
  */
 Paper.prototype.hasSubKeywords = function() {
-	return this._attributes.subKeywords !== null && !isEmpty( this._attributes.subKeywords.length);
+	return this._attributes.subKeywords !== null && !isEmpty( this._attributes.subKeywords);
 };
 
 /**
