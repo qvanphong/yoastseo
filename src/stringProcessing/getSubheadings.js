@@ -48,7 +48,7 @@ function getSubheadingsTopLevel( text ) {
  */
 function getSubheadingsTopLevel3( text ) {
 	const subheadings = [];
-	const regex = /<h3(?:[^>]+)?>(.*?)<\/h3>/ig;
+	const regex = /<h4(?:[^>]+)?>(.*?)<\/h3>/ig;
 	let match;
 
 	while ( ( match = regex.exec( text ) ) !== null ) {
