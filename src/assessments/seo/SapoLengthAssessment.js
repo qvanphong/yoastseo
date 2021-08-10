@@ -8,9 +8,9 @@ class SapoLengthAssessment extends Assessment {
     super()
 
     const defaultConfig = {
-      recommendedMaximum: 35,
-      slightlyOverMaximum: 40,
-      overMaximum: 45,
+      recommendedMaximum: 350,
+      slightlyOverMaximum: 400,
+      overMaximum: 450,
 
       scores: {
         recommendedMaximum: 9,
